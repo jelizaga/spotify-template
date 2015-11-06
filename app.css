@@ -1,5 +1,6 @@
+/* Body styling. */
 body {
-
-  padding: 10px;
-
+	/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
+	background-image: url("../img/stardust.png");
+	padding: 10px;
 }
