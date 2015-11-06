@@ -30,12 +30,10 @@ var myCtrl = joelsSpotify.controller("myCtrl", function($scope, $http) {
       return;
 
     } else {
-      if ($scope.audioObject.pause != undefined) {
-
-        $scope.audioObject.pause();
+      if ($scope.audioObject.pause != undefined) $scope.audioObject.pause()
         $scope.audioObject = new Audio(song);
-        $scope.audioObject.play();
-        $scope.currentSong = song;
+        $scope.audioObject.play()
+        $scope.currentSong = song
 
       }
     }

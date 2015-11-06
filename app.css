@@ -1,6 +1,31 @@
-/* Body styling. */
+/* Importing fonts from Google. */
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+/* BODY STYLING. */
 body {
 	/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
-	background-image: url("../img/stardust.png");
-	padding: 10px;
+	background-image: url("/img/stardust.png");
+}
+
+/* Main content <div>; the background of the content <div>. */
+#main {
+	background-color: #FFD956;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+/* Content <div>; contained inside #main. */
+#content {
+	background-color: #EDEFFF;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+/* Title. */
+h1 {
+	color: #FFFFFF;
+	font-family: "Audiowide", sans-serif;
+	text-align: center;
 }
