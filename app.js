@@ -21,13 +21,14 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#searchWarning").empty();
       var warning = "<text class='warning'>You can't search for something that doesn't exist!</text>";
       $("#searchWarning").append(warning);
-      
+
     } else {
 
       $http.get(baseUrl + $scope.track).success(function(response){
         alert(response.track.items);
         data = $scope.tracks = response.tracks.items
       })
+      
     }
 
   }
