@@ -80,9 +80,12 @@
 	}
 
 	.albumCover {
+		border-radius: 10px;
 		display: inline-block;
-		height: 100px;
-		width: 100px;
+		overflow: hidden;
+		margin-right: 15px;
+		height: 80px;
+		width: 80px;
 	}
 
 	h2, h3 {
