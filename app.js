@@ -37,7 +37,6 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     */
 
     $http.get(baseUrl + $scope.track).success(function(response){
-      alert(response.track.items);
       data = $scope.tracks = response.tracks.items
     })
 
