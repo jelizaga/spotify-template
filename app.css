@@ -81,11 +81,14 @@
 	}
 
 	.albumCover {
-		border-radius: 10px;
-		display: inline-block;
+		float: left;
 		margin-right: 15px;
 		height: 80px;
 		width: 80px;
+	}
+
+	.albumInfo {
+		vertical-align: middle;
 	}
 
 	h2, h3 {
