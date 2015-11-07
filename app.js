@@ -16,10 +16,12 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
     // If the search box is empty, don't perform a search and display a warning.
     // If not, search for the track.
-    if ($("#searchBar").empty()) {
-      var warning = "<text class='warning'>Empty searches are invalid.</text>";
+    if ($("#searchBar").val() == "") {
+      $("#searchWarning").empty();
+      var warning = "<text class='warning'>You can't search for something that doesn't exist!</text>";
       $("#searchWarning").append(warning);
     } else {
+      $("#searchWarning").empty();
       $http.get(baseUrl + $scope.track).success(function(response){
         alert(response.track.items);
         data = $scope.tracks = response.tracks.items
