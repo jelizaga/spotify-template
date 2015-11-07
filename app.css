@@ -9,7 +9,7 @@
 	body {
 		/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
 		background-image: url("img/stardust.png");
-		font-style: "Source Sans Pro";
+		font-style: "Source Sans Pro", sans-serif;
 		font-weight: 400;
 	}
 
@@ -18,7 +18,7 @@
 		background-color: #FFD956;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 20px;
+		margin-top: 100px;
 		padding: 20px;
 		width: 80%;
 	}
