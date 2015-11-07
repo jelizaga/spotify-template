@@ -56,7 +56,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $scope.audioObject.play();
       $scope.currentSong = song;
       $("#statusBox").empty();
-      var status = "<text class='status'>Song playing: \"" + songName + ",\" by " + songArtist + ". Enjoy.</text>";
+      var status = "<text class='status'>You're now listening to \"" + songName + ",\" by " + songArtist + ". Enjoy.</text>";
       $("#statusBox").append(status);
     }
   }
