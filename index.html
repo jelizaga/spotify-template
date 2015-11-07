@@ -43,7 +43,7 @@
 
 						<div class="form-group">
 							<label>Search by song:</label>
-							<input name="search" placeholder="Search for a song!" ng-model="track" class="form-control"></input>
+							<input name="search" id="search" placeholder="Search for a song!" ng-model="track" class="form-control"></input>
 						</div>
 
 						<!-- Button executes getSongs() on click. -->
@@ -64,7 +64,7 @@
 						</div>
 
 						<ul id="songList">
-							<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+							<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + " - " + track.artists[0].name}}</li>
 						</ul>	
 
 					</div>
