@@ -16,6 +16,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
     // If the search box is empty, don't perform a search and display a warning.
     // If not, search for the track.
+    /*
     if ($("#searchBar").val() == "") {
 
       $("#statusBox").empty();
@@ -33,6 +34,12 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       })
 
     }
+    */
+
+    $http.get(baseUrl + $scope.track).success(function(response){
+      alert(response.track.items);
+      data = $scope.tracks = response.tracks.items
+    })
 
   }
 
