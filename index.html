@@ -77,13 +77,15 @@
 							ng-click="play(track.preview_url, track.name, track.artists[0].name)" 
 							title="{{track.name}}, by {{track.artists[0].name}}">
 							<img class="albumCover" src="{{track.album.images[1].url}}" alt="{{track.album.name}}" />
-							<h2>
-								<i class="fa fa-music"></i>
-								{{track.name}}
-							</h2>
-							<h3>
-								a song by {{track.artists[0].name}} from {{track.album.name}}
-							</h3>
+							<div>
+								<h2>
+									<i class="fa fa-music"></i>
+									{{track.name}}
+								</h2>
+								<h3>
+									a song by {{track.artists[0].name}} from {{track.album.name}}
+								</h3>
+							</div>
 						</div>
 
 					</div>
