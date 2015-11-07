@@ -1,6 +1,6 @@
-// 
+// Empty data variable to be filled upon search.
 var data;
-// Spotify API.
+// Spotify API URL.
 var baseUrl = "https://api.spotify.com/v1/search?type=track&query=";
 // Initializing angular app; joelsSpotify.
 var joelsSpotify = angular.module("joelsSpotify", []);
@@ -11,12 +11,19 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
   $scope.audioObject = {};
 
+  // getsSongs gets songs according to the track in #search.
   $scope.getSongs = function() {
 
-
-    $http.get(baseUrl + $scope.track).success(function(response){
-      data = $scope.tracks = response.tracks.items
-    })
+    // If the search box is empty, don't perform a search and display a warning.
+    // If not, search for the track.
+    if ($("#search").length == 0) {
+      var warning = "<text class='warning'>Empty searches are invalid.</text>";
+      $("#searchWarning").append(warning);
+    } else {
+      $http.get(baseUrl + $scope.track).success(function(response){
+        data = $scope.tracks = response.tracks.items
+      })
+    }
 
   }
 

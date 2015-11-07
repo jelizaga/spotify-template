@@ -50,6 +50,10 @@
 		width: 30%;
 	}
 
+	#warning {
+		color: #FF5656;
+	}
+
 /* SONG LIST: */
 	#songList li {
 		list-style-type: none;
