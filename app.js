@@ -21,9 +21,9 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#searchWarning").append(warning);
     } else {
       $http.get(baseUrl + $scope.track).success(function(response){
+        alert(response.track.items);
         data = $scope.tracks = response.tracks.items
       })
-      alert(respnonse.track.items);
     }
 
   }
