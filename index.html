@@ -64,7 +64,12 @@
 						</div>
 
 						<ul id="songList">
-							<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + " - " + track.artists[0].name}}</li>
+							<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">
+								<em>
+									{{track.name}}
+								</em>
+								- {{track.artists[0].name}}
+							</li>
 						</ul>	
 
 					</div>
