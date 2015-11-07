@@ -75,7 +75,7 @@
 						</div>
 
 						<!-- Typical <div> per song. -->
-						<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url)" 
+						<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url, track.name)" 
 							title="{{track.name}}">
 							<h2>
 								{{track.name}}

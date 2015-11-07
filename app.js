@@ -35,13 +35,15 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   }
 
   // Receives track.preview_url from angular.js; plays the track.
-  $scope.play = function(song) {
+  $scope.play = function(song, songName) {
 
     // If the song currently playing is the song clicked, the song will be unselected for play.
     if ($scope.currentSong == song) {
 
       $scope.audioObject.pause();
       $scope.currentSong = false;
+      var status = "<text class='status'>Song paused.</text>";
+      $("#statusBox").append(status);
       return
 
     // Otherwise, if audioObject is not paused, pause it, play the selected song. The selected
@@ -52,7 +54,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $scope.audioObject = new Audio(song);
       $scope.audioObject.play();
       $scope.currentSong = song;
-
+      var status = "<text class='status'>Song playing: " + songName + ". Enjoy.</text>";
+      $("#statusBox").append(status);
     }
   }
 
