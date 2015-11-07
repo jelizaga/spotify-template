@@ -27,7 +27,6 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
       $("#statusBox").append(status);
       $http.get(baseUrl + $scope.track).success(function(response){
-        alert(response.track.items);
         data = $scope.tracks = response.tracks.items
       })
 
