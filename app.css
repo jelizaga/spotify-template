@@ -72,6 +72,10 @@
 		padding: 20px;
 	}
 
+	.songDiv:hover {
+		box-shadow: 3px 3px 0px #56FF5A;
+	}
+
 	h2, h3 {
 		font-family: "Audiowide", sans-serif;
 		margin: 0;
