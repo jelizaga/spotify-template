@@ -57,14 +57,11 @@
 
 	.status {
 		font-weight: bold;
+		text-align: center;
 	}
 
 	.warning {
 		color: #FF5656;
-	}
-
-	.success {
-		color: #56FF5A;
 	}
 
 /* SONG DIVS: */
