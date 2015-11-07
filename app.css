@@ -14,6 +14,7 @@
 		background-color: #FFD956;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 20px;
 		width: 80%;
 	}
 
@@ -22,13 +23,14 @@
 		background-color: #EDEFFF;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 20px;
 		width: 90%;
 	}
 
 /* TITLE: */
 	h1 {
 		color: #FFFFFF;
-		text-shadow: 2px 2px 2px;
+		text-shadow: 2px 2px 2px #FF5656;
 		font-family: "Audiowide", sans-serif;
 		text-align: center;
 	}
