@@ -30,7 +30,7 @@
 /* TITLE: */
 	h1 {
 		color: #FFFFFF;
-		text-shadow: 2px 2px 2px #FF5656;
+		text-shadow: 2px 2px 0px #FF5656;
 		font-family: "Audiowide", sans-serif;
 		text-align: center;
 	}
