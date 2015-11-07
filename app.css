@@ -5,7 +5,6 @@
 	@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700");
 
 /* BODY STYLING: */
-
 	body {
 		/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
 		background-image: url("img/stardust.png");
@@ -78,6 +77,12 @@
 
 	.songDiv:hover {
 		box-shadow: 3px 3px 0px #56FF5A;
+	}
+
+	.albumCover {
+		display: inline-block;
+		height: 100px;
+		width: 100px;
 	}
 
 	h2, h3 {
