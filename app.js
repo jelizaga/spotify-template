@@ -18,17 +18,20 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     // If not, search for the track.
     if ($("#searchBar").val() == "") {
 
-      $("#searchWarning").empty();
-      var warning = "<text class='warning'>You can't search for something that doesn't exist!</text>";
-      $("#searchWarning").append(warning);
+      $("#statusBox").empty();
+      var warning = "<text class='status warning'>You can't search for something that doesn't exist!</text>";
+      $("#statusBox").append(warning);
 
     } else {
 
+      $("#statusBox").empty();
+      var status = "<text class='status success'>Spotify searched. Click to sample a song.</text>";
+      $("#statusBox").append(status);
       $http.get(baseUrl + $scope.track).success(function(response){
         alert(response.track.items);
         data = $scope.tracks = response.tracks.items
       })
-      
+
     }
 
   }

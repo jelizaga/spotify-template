@@ -50,14 +50,21 @@
 		width: 30%;
 	}
 
-	#searchWarning {
+	#statusBox {
 		margin: 10px;
 		padding: 10px;
 	}
 
+	.status {
+		font-weight: bold;
+	}
+
 	.warning {
 		color: #FF5656;
-		font-weight: bold;
+	}
+
+	.success {
+		color: #56FF5A;
 	}
 
 /* SONG DIVS: */
