@@ -42,7 +42,8 @@
 					<form class="container" name="songForm">
 
 						<div class="form-group">
-							<input name="search" id="search" placeholder="Search for a song!" ng-model="track" class="form-control">
+							<input name="search" id="searchBar" placeholder="Search for a song!" 
+								ng-model="track" class="form-control">
 							</input>
 						</div>
 
@@ -52,7 +53,8 @@
 
 						<!-- Button executes getSongs() on click. -->
 						<div class="form-group">
-							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">
+							<button ng-disabled="songForm.search.$invalid" id="searchButton" 
+								class="btn btn-primary" ng-click="getSongs()" type="submit">
 								Search
 							</button>
 						</div>

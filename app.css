@@ -46,10 +46,15 @@
 	}
 
 /* SEARCH FORM: */
-	.form-control {
+	#searchBar {
 		margin-left: auto;
 		margin-right: auto;
 		width: 30%;
+	}
+
+	#searchButton {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	#warning {
