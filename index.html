@@ -70,9 +70,10 @@
 					<!-- Results. -->
 					<div class="container-fixed">
 
-						<!-- Typical <div> per song. -->
-						<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url, track.name)" 
-							title="{{track.name}}">
+						<!-- Typical <div> per song. On click it sends data to angular's play(). -->
+						<div ng-repeat="track in tracks" class="songDiv" 
+							ng-click="play(track.preview_url, track.name, track.artists[0].name)" 
+							title="{{track.name}}, by {{track.artists[0].name}}">
 							<h2>
 								{{track.name}}
 							</h2>

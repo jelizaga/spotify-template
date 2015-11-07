@@ -35,7 +35,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   }
 
   // Receives track.preview_url from angular.js; plays the track.
-  $scope.play = function(song, songName) {
+  $scope.play = function(song, songName, songArtist) {
 
     // If the song currently playing is the song clicked, the song will be unselected for play.
     if ($scope.currentSong == song) {
@@ -56,7 +56,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $scope.audioObject.play();
       $scope.currentSong = song;
       $("#statusBox").empty();
-      var status = "<text class='status'>Song playing: " + songName + ". Enjoy.</text>";
+      var status = "<text class='status'>Song playing: \"" + songName + ",\" by " + songArtist + ". Enjoy.</text>";
       $("#statusBox").append(status);
     }
   }
@@ -66,6 +66,6 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 // Add tool tips to anything with a title property
 $("body").tooltip({
 
-    selector: "[title]" + "-" + "[artist]"
+    selector: "[title]"
 
 });
