@@ -1,32 +1,39 @@
-/* Importing fonts from Google. */
-@import url("https://fonts.googleapis.com/css?family=Audiowide");
+/* FONTS: */
 
-/* BODY STYLING. */
-body {
-	/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
-	background-image: url("img/stardust.png");
-}
+	@import url("https://fonts.googleapis.com/css?family=Audiowide");
 
-/* Main content <div>; the background of the content <div>. */
-#main {
-	background-color: #FFD956;
-	margin-left: auto;
-	margin-right: auto;
-	width: 80%;
-}
+/* BODY STYLING: */
 
-/* Content <div>; contained inside #main. */
-#content {
-	background-color: #EDEFFF;
-	margin-left: auto;
-	margin-right: auto;
-	width: 90%;
-}
+	body {
+		/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
+		background-image: url("img/stardust.png");
+	}
 
-/* Title. */
-h1 {
-	color: #FFFFFF;
-	box-shadow: 2px 2px 2px;
-	font-family: "Audiowide", sans-serif;
-	text-align: center;
-}
+	/* Main content <div>; the background of the content <div>. */
+	#main {
+		background-color: #FFD956;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
+
+	/* Content <div>; contained inside #main. */
+	#content {
+		background-color: #EDEFFF;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+	}
+
+/* TITLE: */
+	h1 {
+		color: #FFFFFF;
+		text-shadow: 2px 2px 2px;
+		font-family: "Audiowide", sans-serif;
+		text-align: center;
+	}
+
+/* SEARCH FORM: */
+	.form-control {
+		width: 30%;
+	}
