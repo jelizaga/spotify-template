@@ -6,7 +6,7 @@ var joelsSpotify = angular.module("joelsSpotify", []);
 
 // $scope is literally the scope of the angular.js application.
 // $http is the variable that contains the AJAX service of angular.js.
-var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
+var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   $scope.audioObject = {}
   $scope.getSongs = function() {
     $http.get(baseUrl + $scope.track).success(function(response){
