@@ -16,7 +16,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
     // If the search box is empty, don't perform a search and display a warning.
     // If not, search for the track.
-    if ($("#searchBar").length === 0) {
+    if ($("#searchBar").empty()) {
       var warning = "<text class='warning'>Empty searches are invalid.</text>";
       $("#searchWarning").append(warning);
     } else {
