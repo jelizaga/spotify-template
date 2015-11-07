@@ -1,12 +1,16 @@
 /* FONTS: */
 
+	/* Fonts sourced from Google's font API. */
 	@import url("https://fonts.googleapis.com/css?family=Audiowide");
+	@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic");
 
 /* BODY STYLING: */
 
 	body {
 		/* Background "Stardust" by Atle Mo (http://atle.co/); found at http://subtlepatterns.com/. */
 		background-image: url("img/stardust.png");
+		font-style: "Source Sans Pro";
+		font-weight: 400;
 	}
 
 	/* Main content <div>; the background of the content <div>. */
@@ -14,6 +18,7 @@
 		background-color: #FFD956;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 20px;
 		padding: 20px;
 		width: 80%;
 	}
