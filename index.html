@@ -67,17 +67,16 @@
 							<span ng-show="currentSong && !audioObject.paused">(playing)</span>
 						</div>
 
-						<div id="songList">
-							<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url)" 
-								title="{{track.name}}">
-								<h2>
-									{{track.name}}
-								</h2>
-								<h3>
-									a song by {{track.artists[0].name}}
-								</h3>
-							</div>
-						</div>	
+						<!-- Typical <div> per song. -->
+						<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url)" 
+							title="{{track.name}}">
+							<h2>
+								{{track.name}}
+							</h2>
+							<h3>
+								a song by {{track.artists[0].name}}
+							</h3>
+						</div>
 
 					</div>
 

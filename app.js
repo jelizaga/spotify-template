@@ -50,6 +50,6 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 // Add tool tips to anything with a title property
 $("body").tooltip({
 
-    selector: "[title]"
+    selector: "[title]" + "-" + "[artist]"
 
 });
