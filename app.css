@@ -72,6 +72,7 @@
 		background-color: #FFFFFF;
 		box-shadow: 3px 3px 0px #6256FF;
 		margin: 20px;
+		overflow: hidden;
 		padding: 20px;
 	}
 
@@ -82,7 +83,6 @@
 	.albumCover {
 		border-radius: 10px;
 		display: inline-block;
-		overflow: hidden;
 		margin-right: 15px;
 		height: 80px;
 		width: 80px;
