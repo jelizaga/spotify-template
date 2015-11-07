@@ -80,7 +80,7 @@
 		box-shadow: 3px 3px 0px #56FF5A;
 	}
 
-	.albumCover {
+	.albumCover, .loadCover {
 		float: left;
 		margin-right: 15px;
 		height: 80px;

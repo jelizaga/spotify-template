@@ -76,6 +76,7 @@
 						<div ng-repeat="track in tracks" class="songDiv" 
 							ng-click="play(track.preview_url, track.name, track.artists[0].name)" 
 							title="{{track.name}}, by {{track.artists[0].name}}">
+							<i class="fa fa-cog fa-spin loadCover"></i>
 							<img class="albumCover" src="{{track.album.images[1].url}}" alt="{{track.album.name}}" />
 							<div class="albumInfo">
 								<h2>
