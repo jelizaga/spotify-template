@@ -47,16 +47,6 @@
 							</input>
 						</div>
 
-						<!-- Warns the user if they've entered improper information. -->
-						<div id="statusBox">
-							<text class="status">
-								Welcome to 
-								<em>
-									Joel's Spotify Web App.
-								</em> Awaiting your search.
-							</text>
-						</div>
-
 						<!-- Button executes getSongs() on click. -->
 						<div class="form-group">
 							<button ng-disabled="songForm.search.$invalid" id="searchButton" 
@@ -66,6 +56,16 @@
 						</div>
 
 					</form>
+
+					<!-- Warns the user if they've entered improper information. -->
+					<div id="statusBox">
+						<text class="status">
+							Welcome to 
+							<em>
+								Joel's Spotify Web App.
+							</em> Awaiting your search.
+						</text>
+					</div>
 					
 					<!-- Results. -->
 					<div class="container-fixed">

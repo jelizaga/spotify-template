@@ -2,7 +2,7 @@
 
 	/* Fonts sourced from Google's font API. */
 	@import url("https://fonts.googleapis.com/css?family=Audiowide");
-	@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic");
+	@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700");
 
 /* BODY STYLING: */
 
@@ -50,13 +50,15 @@
 		width: 30%;
 	}
 
+/* STATUS BOX: */
 	#statusBox {
 		margin: 10px;
 		padding: 10px;
 	}
 
 	.status {
-		font-weight: bold;
+		font-style: "Ubuntu Mono", monospace;
+		font-weight: 700;
 		text-align: center;
 	}
 
