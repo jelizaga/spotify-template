@@ -70,10 +70,6 @@
 					<!-- Results. -->
 					<div class="container-fixed">
 
-						<div class="help-block">
-							<span ng-show="currentSong && !audioObject.paused">Playing selected song.</span>
-						</div>
-
 						<!-- Typical <div> per song. -->
 						<div ng-repeat="track in tracks" class="songDiv" ng-click="play(track.preview_url, track.name)" 
 							title="{{track.name}}">
