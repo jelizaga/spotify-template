@@ -63,14 +63,6 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
 })
 
-// The album covers take awhile to load, so this displays a temporary loading image until they
-// finish.
-$(".loadCover").show();
-$(".albumCover").hide();
-$(".albumCover").on("load", function() {
-  $(".loadCover").hide();
-});
-
 // Add tool tips to anything with a title property.
 $("body").tooltip({
 
