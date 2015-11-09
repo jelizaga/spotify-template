@@ -59,7 +59,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").append(status);
     var albumUrl = "https://api.spotify.com/v1/albums/";
     $http.get(albumUrl + albumId + "/tracks").success(function(response){
-      data = $scope.tracks = response.tracks
+      data = $scope.tracks = response.items
     })
 
   }
