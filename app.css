@@ -77,7 +77,7 @@
 	}
 
 /* SONG DIVS: */
-	.songDiv {
+	.songDiv, .albumDiv {
 		background-color: #FFFFFF;
 		box-shadow: 3px 3px 0px #6256FF;
 		margin: 20px;
@@ -85,7 +85,7 @@
 		padding: 20px;
 	}
 
-	.songDiv:hover {
+	.songDiv:hover, .albumDiv:hover {
 		box-shadow: 3px 3px 0px #56FF5A;
 	}
 
