@@ -35,12 +35,15 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   }
 
   $scope.albumSearch = function(albumName) {
+    alert(albumName);
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
+    /*
     $http.get(baseUrl + albumName).success(function(response){
       data = $scope.tracks = response.track.items
     })
+    */
   }
 
   // Receives track.preview_url from angular.js; plays the track.
