@@ -34,17 +34,33 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     }
 
   }
+  
+  // artistSearch receives an artistName whenever the user selects the name of an artist.
+  // It changes the tracklist to include the results Spotify brings back when queried for this
+  // artist.
+  $scope.artistSearch = function(artistName) {
 
-  // albumSearch receives the albumName whenever the user selects the name of an album.
+    $("#statusBox").empty();
+    var status = "<text class='status'>Artist searched: \"" + artistName + ".\"</text>";
+    $("#statusBox").append(status);
+    $http.get(baseUrl + artistName).success(function(response){
+      data = $scope.tracks = response.tracks.items
+    })
+
+  }
+
+  // albumSearch receives an albumName whenever the user selects the name of an album.
   // It changes the tracklist to include the results Spotify brings back when queried for this
   // album.
   $scope.albumSearch = function(albumName) {
+
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
     $http.get(baseUrl + albumName).success(function(response){
       data = $scope.tracks = response.tracks.items
     })
+
   }
 
   // Receives track.preview_url from angular.js; plays the track.
