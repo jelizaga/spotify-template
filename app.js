@@ -27,6 +27,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#statusBox").empty();
       var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
       $("#statusBox").append(status);
+      $(".songDiv").empty();
       $http.get(baseUrl + $scope.track).success(function(response){
         data = $scope.tracks = response.tracks.items
       })
@@ -57,9 +58,10 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
+    $(".songDiv").empty();
     var albumUrl = "https://api.spotify.com/v1/albums/";
     $http.get(albumUrl + albumId + "/tracks").success(function(response){
-      data = $scope.tracks = response.items
+      data = $scope.albumSongs = response.items
     })
 
   }
