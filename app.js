@@ -31,8 +31,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $(".albumDiv").fadeOut(1000);
       $http.get(baseUrl + $scope.track).success(function(response){
         data = $scope.tracks = response.tracks.items
-        $(".songDiv").fadeIn(1000);
       })
+      $(".songDiv").fadeIn(1000);
 
     }
 
@@ -49,8 +49,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     (".albumDiv").fadeOut(1000);
     $http.get(baseUrl + artistName).success(function(response){
       data = $scope.tracks = response.tracks.items
-      (".songDiv").fadeIn(1000);
     })
+    $(".songDiv").fadeIn(1000);
 
   }
 
@@ -67,8 +67,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $http.get(albumUrl + albumId).success(function(response){
       data = $scope.altracks = response.tracks.items
       data = $scope.al = response
-      $(".albumDiv").fadeIn(1000);
     })
+    $(".albumDiv").fadeIn(1000);
 
   }
 
