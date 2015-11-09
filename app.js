@@ -28,10 +28,10 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#statusBox").empty();
       var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
       $("#statusBox").append(status);
-      $(".albumDiv").hide(1000);
+      $(".albumDiv").fadeOut(1000);
       $http.get(baseUrl + $scope.track).success(function(response){
         data = $scope.tracks = response.tracks.items
-        $(".songDiv").show(1000);
+        $(".songDiv").fadeIn(1000);
       })
 
     }
@@ -46,10 +46,10 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").empty();
     var status = "<text class='status'>Artist searched: \"" + artistName + ".\"</text>";
     $("#statusBox").append(status);
-    (".albumDiv").hide(1000);
+    (".albumDiv").fadeOut(1000);
     $http.get(baseUrl + artistName).success(function(response){
       data = $scope.tracks = response.tracks.items
-      (".songDiv").show(1000);
+      (".songDiv").fadeIn(1000);
     })
 
   }
@@ -62,12 +62,12 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
-    $(".songDiv").hide(1000);
+    $(".songDiv").fadeOut(1000);
     var albumUrl = "https://api.spotify.com/v1/albums/";
     $http.get(albumUrl + albumId).success(function(response){
       data = $scope.altracks = response.tracks.items
       data = $scope.al = response
-      $(".albumDiv").show(1000);
+      $(".albumDiv").fadeIn(1000);
     })
 
   }
