@@ -52,7 +52,7 @@
 						<!-- Button executes getSongs() on click. -->
 						<div class="form-group">
 							<button ng-disabled="songForm.search.$invalid" id="searchButton" 
-								class="btn btn-primary" ng-click="getSongs()" type="submit">
+								class="btn btn-primary" ng-click="userSearch()" type="submit">
 								Search
 							</button>
 						</div>
@@ -75,7 +75,7 @@
 						<!-- Typical <div> per song. On click it sends data to angular's play(). -->
 						<div ng-repeat="track in tracks" class="songDiv" 
 							ng-click="play(track.preview_url, track.name, track.artists[0].name)" 
-							title="{{track.name}}, by {{track.artists[0].name}}">
+							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
 							<img class="albumCover" src="{{track.album.images[1].url}}" alt="{{track.album.name}}" />
 							<div class="albumInfo">
 								<h2>
@@ -83,7 +83,10 @@
 									{{track.name}}
 								</h2>
 								<h3>
-									a song by {{track.artists[0].name}} from {{track.album.name}}
+									a song by {{track.artists[0].name}} from 
+									<a ng-click="albumSearch({{track.album.name}})">
+										{{track.album.name}}
+									</a>
 								</h3>
 							</div>
 						</div>

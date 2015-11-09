@@ -11,8 +11,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
   $scope.audioObject = {};
 
-  // getsSongs gets songs according to the track in #search.
-  $scope.getSongs = function() {
+  // userSearch gets songs according to the track in #searchBar.
+  $scope.userSearch = function() {
 
     // If the search box is empty, don't perform a search and display a warning.
     if ($("#searchBar").val() == "") {
@@ -32,6 +32,15 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
     }
 
+  }
+
+  $scope.albumSearch = function(albumName) {
+    $("#statusBox").empty();
+    var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
+    $("#statusBox").append(status);
+    $http.get(baseUrl + albumName).success(function(response){
+      data = $scope.tracks = response.track.items
+    })
   }
 
   // Receives track.preview_url from angular.js; plays the track.

@@ -12,6 +12,15 @@
 		font-weight: 400;
 	}
 
+	a {
+		color: #FF5656;
+	}
+
+	a:hover {
+		color: #FFD956;
+		text-decoration: none;
+	}
+
 	/* Main content <div>; the background of the content <div>. */
 	#main {
 		background-color: #FFD956;
@@ -80,7 +89,8 @@
 		box-shadow: 3px 3px 0px #56FF5A;
 	}
 
-	.albumCover, .loadCover {
+	.albumCover {
+		border-radius: 10px;
 		float: left;
 		margin-right: 15px;
 		height: 80px;
