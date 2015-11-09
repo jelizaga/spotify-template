@@ -52,7 +52,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   // albumSearch receives an albumId whenever the user selects the name of an album.
   // It changes the tracklist to include the results Spotify brings back when queried for this
   // album.
-  $scope.albumSearch = function(albumId) {
+  $scope.albumSearch = function(albumName, albumId) {
 
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
