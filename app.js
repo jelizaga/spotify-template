@@ -13,11 +13,10 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   $scope.userSearch = function() {
 
     // If the search box is empty, don't perform a search and display a warning.
-    if ($("#searchBar").val() == "") {
+    if ($("#searchBar").val() === "") {
 
       $("#statusBox").empty();
-      var warning = "<text class='status warning'>You can't search for something that doesn't 
-        exist!</text>";
+      var warning = "<text class='status warning'>You can't search for something that doesn't exist!</text>";
       $("#statusBox").append(warning);
 
     // If not, search for the track.
@@ -97,8 +96,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $scope.audioObject.play();
       $scope.currentSong = song;
       $("#statusBox").empty();
-      var status = "<text class='status'>You're now listening to \"" + songName + ",\" 
-        by " + songArtist + ". Enjoy.</text>";
+      var status = "<text class='status'>You're now listening to \"" + songName + ",\" by " + songArtist + ". Enjoy.</text>";
       $("#statusBox").append(status);
     }
   }
