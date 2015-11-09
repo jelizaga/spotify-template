@@ -13,10 +13,12 @@
 		
 		<!-- Importing jQuery.js, bootstrap.css, bootstrap.js, angular.js, and font-awesome.css. -->
 		<script src="https://code.jquery.com/jquery.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" 
+			rel="stylesheet" type="text/css" />
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" 
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 		
 		<!-- Spotify application javascript. -->
@@ -75,7 +77,8 @@
 						<!-- Typical <div> per song. On click it sends data to angular's play(). -->
 						<div ng-repeat="track in tracks" class="songDiv"
 							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
-							<img class="albumCover" src="{{track.album.images[1].url}}" alt="{{track.album.name}}" />
+							<img class="albumCover" src="{{track.album.images[1].url}}" 
+								alt="{{track.album.name}}" />
 							<div class="albumInfo">
 									<h2>
 										<i class="fa fa-music"></i>
@@ -86,11 +89,13 @@
 									</h2>
 								<h3>
 									a song by
-									<a ng-href="" ng-click="artistSearch(track.artists[0].name)">
+									<a ng-href="" ng-click="artistSearch(track.artists[0].name, 
+										artistSearch(track.artists[0].id))">
 										{{track.artists[0].name}}
 									</a>
 									from 
-									<a ng-href="" ng-click="albumSearch(track.album.name, track.album.id)">
+									<a ng-href="" ng-click="albumSearch(track.album.name, 
+										track.album.id)">
 										{{track.album.name}}
 									</a>
 								</h3>
@@ -114,6 +119,27 @@
 										{{altrack.artists[0].name}}
 									</a>
 									and track #{{altrack.track_number}} of {{al.name}}
+								</h3>
+							</div>
+						</div>
+
+						<div ng-repeat="artrack in artracks" class="artistDiv"
+							title="&quot;{{artrack.name}},&quot; by {{artrack.artists[0].name}}">
+							<img class="albumCover" src="{{artrack.album.images[1].url}}" 
+								alt="{{artrack.album.name}}" />
+							<div class="albumInfo">
+									<h2>
+										<i class="fa fa-music"></i>
+										<a ng-href="" ng-click="play(artrack.preview_url, 
+											artrack.name, artrack.artists[0].name)">
+											{{artrack.name}}
+										</a>
+									</h2>
+								<h3>
+									from
+									<a ng-href="" ng-click="albumSearch(artrack.album.name, artrack.album.id">
+										{{artrack.album.name}}
+									</a>
 								</h3>
 							</div>
 						</div>

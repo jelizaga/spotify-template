@@ -1,8 +1,5 @@
 // Empty data variable to be filled upon search.
 var data;
-var dataTwo;
-// Spotify API URL.
-var baseUrl = "https://api.spotify.com/v1/search?type=track&query=";
 // Initializing angular app; joelsSpotify.
 var joelsSpotify = angular.module("joelsSpotify", []);
 
@@ -19,7 +16,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     if ($("#searchBar").val() == "") {
 
       $("#statusBox").empty();
-      var warning = "<text class='status warning'>You can't search for something that doesn't exist!</text>";
+      var warning = "<text class='status warning'>You can't search for something that doesn't 
+        exist!</text>";
       $("#statusBox").append(warning);
 
     // If not, search for the track.
@@ -29,7 +27,9 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
       $("#statusBox").append(status);
       $(".albumDiv").fadeOut(1000);
-      $http.get(baseUrl + $scope.track).success(function(response){
+      $(".artistDiv").fadeOut(1000);
+      var searchUrl = "https://api.spotify.com/v1/search?type=track&query=";
+      $http.get(searchUrl + $scope.track).success(function(response){
         data = $scope.tracks = response.tracks.items
       })
       $(".songDiv").fadeIn(1000);
@@ -38,31 +38,34 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
   }
 
-  // artistSearch receives an artistName whenever the user selects the name of an artist.
+  // artistSearch receives an artistId whenever the user selects the name of an artist.
   // It changes the tracklist to include the results Spotify brings back when queried for this
-  // artist.
-  $scope.artistSearch = function(artistName) {
+  // artistId.
+  $scope.artistSearch = function(artistName, artistId) {
 
     $("#statusBox").empty();
-    var status = "<text class='status'>Artist searched: \"" + artistName + ".\"</text>";
+    var status = "<text class='status'>Searching for the top songs of " + artistName + ".</text>";
     $("#statusBox").append(status);
-    (".albumDiv").fadeOut(1000);
-    $http.get(baseUrl + artistName).success(function(response){
-      data = $scope.tracks = response.tracks.items
+    $(".albumDiv").fadeOut(1000);
+    $(".songDiv").fadeOut(1000);
+    var artistUrl = "https://api.spotify.com/v1/artists/";
+    $http.get(artistUrl + artistId + "/top-tracks?country=US").success(function(response){
+      data = $scope.artracks = response.tracks
     })
-    $(".songDiv").fadeIn(1000);
+    $(".artistDiv").fadeIn(1000);
 
   }
 
   // albumSearch receives an albumId whenever the user selects the name of an album.
   // It changes the tracklist to include the results Spotify brings back when queried for this
-  // album.
+  // albumId.
   $scope.albumSearch = function(albumName, albumId) {
 
     $("#statusBox").empty();
-    var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
+    var status = "<text class='status'>Grabbing \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
     $(".songDiv").fadeOut(1000);
+    $(".artistDiv").fadeOut(1000);
     var albumUrl = "https://api.spotify.com/v1/albums/";
     $http.get(albumUrl + albumId).success(function(response){
       data = $scope.altracks = response.tracks.items
@@ -94,7 +97,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $scope.audioObject.play();
       $scope.currentSong = song;
       $("#statusBox").empty();
-      var status = "<text class='status'>You're now listening to \"" + songName + ",\" by " + songArtist + ". Enjoy.</text>";
+      var status = "<text class='status'>You're now listening to \"" + songName + ",\" 
+        by " + songArtist + ". Enjoy.</text>";
       $("#statusBox").append(status);
     }
   }
