@@ -90,7 +90,7 @@
 								<h3>
 									a song by
 									<a ng-href="" ng-click="artistSearch(track.artists[0].name, 
-										artistSearch(track.artists[0].id))">
+										track.artists[0].id))">
 										{{track.artists[0].name}}
 									</a>
 									from 
@@ -115,7 +115,8 @@
 									</h2>
 								<h3>
 									a song by
-									<a ng-href="" ng-click="artistSearch(altrack.artists[0].name)">
+									<a ng-href="" ng-click="artistSearch(altrack.artists[0].name, 
+										altrack.artists[0].id)">
 										{{altrack.artists[0].name}}
 									</a>
 									and track #{{altrack.track_number}} of {{al.name}}
