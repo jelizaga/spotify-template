@@ -24,7 +24,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
       $("#statusBox").empty();
       var yourSearch = $("#searchBar").val();
-      var status = "<text class='status'>Spotify searched for \"" + yourSearch +"\". Click the title of a song for a sample.</text>";
+      var status = "<text class='status'>I've searched for \"" + yourSearch +".\" Click the title of a song for a sample.</text>";
       $("#statusBox").append(status);
       $(".albumDiv").fadeOut(1000);
       $(".artistDiv").fadeOut(1000);

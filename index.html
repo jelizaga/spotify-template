@@ -51,7 +51,7 @@
 							</input>
 						</div>
 
-						<!-- Button executes getSongs() on click. -->
+						<!-- Button executes userSearch() on click. -->
 						<div class="form-group">
 							<button ng-disabled="songForm.search.$invalid" id="searchButton" 
 								class="btn btn-primary" ng-click="userSearch()" type="submit">
@@ -61,7 +61,8 @@
 
 					</form>
 
-					<!-- Warns the user if they've entered improper information. -->
+					<!-- statusBox warns the user if they've entered improper information and 
+					displays the status of the application. It's a glorified alert(). -->
 					<div id="statusBox">
 						<text class="status">
 							Welcome to 
@@ -74,7 +75,7 @@
 					<!-- Results. -->
 					<div class="container-fixed">
 
-						<!-- Typical <div> per song. On click it sends data to angular's play(). -->
+						<!-- This contains the list of songs produced by userSearch. -->
 						<div ng-repeat="track in tracks" class="songDiv"
 							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
 							<img class="albumCover" src="{{track.album.images[1].url}}" 
@@ -90,7 +91,7 @@
 								<h3>
 									a song by
 									<a ng-href="" ng-click="artistSearch(track.artists[0].name, 
-										track.artists[0].id))">
+										track.artists[0].id)">
 										{{track.artists[0].name}}
 									</a>
 									from 
@@ -102,6 +103,7 @@
 							</div>
 						</div>
 
+						<!-- This contains the list of songs produced by an albumSearch. -->
 						<div ng-repeat="altrack in altracks" class="albumDiv"
 							title="&quot;{{altrack.name}},&quot; by {{altrack.artists[0].name}}">
 							<img class="albumCover" src="{{al.images[1].url}}" alt="{{al.name}}" />
@@ -124,6 +126,7 @@
 							</div>
 						</div>
 
+						<!-- This contains the list of songs produced by artistSearch. -->
 						<div ng-repeat="artrack in artracks" class="artistDiv"
 							title="&quot;{{artrack.name}},&quot; by {{artrack.artists[0].name}}">
 							<img class="albumCover" src="{{artrack.album.images[1].url}}" 
@@ -138,7 +141,8 @@
 									</h2>
 								<h3>
 									from
-									<a ng-href="" ng-click="albumSearch(artrack.album.name, artrack.album.id">
+									<a ng-href="" ng-click="albumSearch(artrack.album.name, 
+										artrack.album.id)">
 										{{artrack.album.name}}
 									</a>
 								</h3>
