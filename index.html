@@ -73,15 +73,17 @@
 					<div class="container-fixed">
 
 						<!-- Typical <div> per song. On click it sends data to angular's play(). -->
-						<div ng-repeat="track in tracks" class="songDiv" 
-							ng-click="play(track.preview_url, track.name, track.artists[0].name)" 
+						<div ng-repeat="track in tracks" class="songDiv"
 							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
 							<img class="albumCover" src="{{track.album.images[1].url}}" alt="{{track.album.name}}" />
 							<div class="albumInfo">
-								<h2>
-									<i class="fa fa-music"></i>
-									{{track.name}}
-								</h2>
+									<h2>
+										<i class="fa fa-music"></i>
+										<a ng-href="" ng-click="play(track.preview_url, 
+											track.name, track.artists[0].name)">
+											{{track.name}}
+										</a>
+									</h2>
 								<h3>
 									a song by {{track.artists[0].name}} from 
 									<a ng-href="" ng-click="albumSearch(track.album.name)">

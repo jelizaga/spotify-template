@@ -20,6 +20,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#statusBox").empty();
       var warning = "<text class='status warning'>You can't search for something that doesn't exist!</text>";
       $("#statusBox").append(warning);
+
     // If not, search for the track.
     } else {
 
@@ -34,16 +35,17 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
 
   }
 
+  // albumSearch receives the albumName whenever the user selects the name of an album.
+  // It changes the tracklist to include the results Spotify brings back when queried for this
+  // album.
   $scope.albumSearch = function(albumName) {
     alert(albumName);
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
-    /*
     $http.get(baseUrl + albumName).success(function(response){
       data = $scope.tracks = response.track.items
     })
-    */
   }
 
   // Receives track.preview_url from angular.js; plays the track.
