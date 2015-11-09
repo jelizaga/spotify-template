@@ -39,12 +39,11 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   // It changes the tracklist to include the results Spotify brings back when queried for this
   // album.
   $scope.albumSearch = function(albumName) {
-    alert(albumName);
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
     $http.get(baseUrl + albumName).success(function(response){
-      data = $scope.tracks = response.track.items
+      data = $scope.tracks = response.tracks.items
     })
   }
 
