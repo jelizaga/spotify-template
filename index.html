@@ -97,23 +97,23 @@
 							</div>
 						</div>
 
-						<div ng-repeat="track in tracks" class="albumDiv"
-							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
+						<div ng-repeat="altrack in altracks" class="albumDiv"
+							title="&quot;{{altrack.name}},&quot; by {{altrack.artists[0].name}}">
 							<img class="albumCover" src="{{al.images[1].url}}" alt="{{al.name}}" />
 							<div class="albumInfo">
 									<h2>
 										<i class="fa fa-music"></i>
-										<a ng-href="" ng-click="play(track.preview_url, 
-											track.name, track.artists[0].name)">
-											{{track.name}}
+										<a ng-href="" ng-click="play(altrack.preview_url, 
+											altrack.name, altrack.artists[0].name)">
+											{{altrack.name}}
 										</a>
 									</h2>
 								<h3>
 									a song by
-									<a ng-href="" ng-click="artistSearch(track.artists[0].name)">
-										{{track.artists[0].name}}
+									<a ng-href="" ng-click="artistSearch(altrack.artists[0].name)">
+										{{altrack.artists[0].name}}
 									</a>
-									and track #{{track.track_number}} of {{al.name}}
+									and track #{{altrack.track_number}} of {{al.name}}
 								</h3>
 							</div>
 						</div>
