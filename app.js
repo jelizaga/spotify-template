@@ -1,5 +1,7 @@
 // Empty data variable to be filled upon search.
 var data;
+// Spotify API URL.
+var baseUrl = "https://api.spotify.com/v1/search?type=track&query=";
 // Initializing angular app; joelsSpotify.
 var joelsSpotify = angular.module("joelsSpotify", []);
 
@@ -25,8 +27,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
       $("#statusBox").empty();
       var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
       $("#statusBox").append(status);
-      var trackUrl = "https://api.spotify.com/v1/search?type=track&query=";
-      $http.get(trackUrl + $scope.track).success(function(response){
+      $http.get(baseUrl + $scope.track).success(function(response){
         data = $scope.tracks = response.tracks.items
       })
 
@@ -42,23 +43,22 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").empty();
     var status = "<text class='status'>Artist searched: \"" + artistName + ".\"</text>";
     $("#statusBox").append(status);
-    var artistUrl = "https://api.spotify.com/v1/search?type=artist&query=";
-    $http.get(artistUrl + artistName).success(function(response){
+    $http.get(baseUrl + artistName).success(function(response){
       data = $scope.tracks = response.tracks.items
     })
 
   }
 
-  // albumSearch receives an albumName whenever the user selects the name of an album.
+  // albumSearch receives an albumId whenever the user selects the name of an album.
   // It changes the tracklist to include the results Spotify brings back when queried for this
   // album.
-  $scope.albumSearch = function(albumName) {
+  $scope.albumSearch = function(albumId) {
 
     $("#statusBox").empty();
     var status = "<text class='status'>Album searched: \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
-    var albumUrl = "https://api.spotify.com/v1/search?type=album&query=";
-    $http.get(albumUrl + albumName).success(function(response){
+    var albumUrl = "https://api.spotify.com/v1/albums/";
+    $http.get(albumUrl + albumId + "/tracks").success(function(response){
       data = $scope.tracks = response.tracks.items
     })
 
