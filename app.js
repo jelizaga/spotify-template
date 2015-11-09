@@ -23,7 +23,8 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     } else {
 
       $("#statusBox").empty();
-      var status = "<text class='status'>Spotify searched. Click to sample a song.</text>";
+      var yourSearch = $("#searchBar").val();
+      var status = "<text class='status'>Spotify searched for \"" + yourSearch +"\". Click the title of a song for a sample.</text>";
       $("#statusBox").append(status);
       $(".albumDiv").fadeOut(1000);
       $(".artistDiv").fadeOut(1000);
@@ -43,7 +44,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   $scope.artistSearch = function(artistName, artistId) {
 
     $("#statusBox").empty();
-    var status = "<text class='status'>Searching for the top songs of " + artistName + ".</text>";
+    var status = "<text class='status'>Currently, these are the most popular songs of " + artistName + ".</text>";
     $("#statusBox").append(status);
     $(".albumDiv").fadeOut(1000);
     $(".songDiv").fadeOut(1000);
@@ -61,7 +62,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
   $scope.albumSearch = function(albumName, albumId) {
 
     $("#statusBox").empty();
-    var status = "<text class='status'>Grabbing \"" + albumName + ".\"</text>";
+    var status = "<text class='status'>Presenting \"" + albumName + ".\"</text>";
     $("#statusBox").append(status);
     $(".songDiv").fadeOut(1000);
     $(".artistDiv").fadeOut(1000);
