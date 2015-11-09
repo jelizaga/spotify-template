@@ -99,7 +99,7 @@
 
 						<div ng-repeat="track in tracks" class="albumDiv"
 							title="&quot;{{track.name}},&quot; by {{track.artists[0].name}}">
-							<img class="albumCover" src="{{album.images[1].url}}" alt="{{album.name}}" />
+							<img class="albumCover" src="{{al.images[1].url}}" alt="{{al.name}}" />
 							<div class="albumInfo">
 									<h2>
 										<i class="fa fa-music"></i>
@@ -113,7 +113,7 @@
 									<a ng-href="" ng-click="artistSearch(track.artists[0].name)">
 										{{track.artists[0].name}}
 									</a>
-									and track #{{track.track_number}} of {{album.name}}
+									and track #{{track.track_number}} of {{al.name}}
 								</h3>
 							</div>
 						</div>

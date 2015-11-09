@@ -1,5 +1,6 @@
 // Empty data variable to be filled upon search.
 var data;
+var dataTwo;
 // Spotify API URL.
 var baseUrl = "https://api.spotify.com/v1/search?type=track&query=";
 // Initializing angular app; joelsSpotify.
@@ -45,8 +46,10 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     $("#statusBox").empty();
     var status = "<text class='status'>Artist searched: \"" + artistName + ".\"</text>";
     $("#statusBox").append(status);
+    (".albumDiv").hide();
     $http.get(baseUrl + artistName).success(function(response){
       data = $scope.tracks = response.tracks.items
+      (".songDiv").show();
     })
 
   }
@@ -63,7 +66,7 @@ var myCtrl = joelsSpotify.controller('myCtrl', function($scope, $http) {
     var albumUrl = "https://api.spotify.com/v1/albums/";
     $http.get(albumUrl + albumId).success(function(response){
       data = $scope.tracks = response.tracks.items
-      data = $scope.album = response
+      data = $scope.al = response
       $(".albumDiv").show();
     })
 
